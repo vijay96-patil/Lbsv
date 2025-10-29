@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Zilla Parishad School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0077B6; /* A welcoming blue */
+            --secondary-color: #FFB703; /* A vibrant yellow/orange accent */
+            --background-color: #F8F9FA;
+            --text-color: #343A40;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Lato', sans-serif;
+        }
+
+        /* General Body Styles */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        /* Header / Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center; /* centered like academics */
+            align-items: center;
+            background: var(--primary-color);
+            padding: 16px 0; /* match academics spacing */
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        nav {
+          position: relative;
+          background: #005fa3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 6px 0;
+        }
+        nav ul.nav-menu {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+        }
+        nav ul.nav-menu li { margin: 0; }
+        nav ul.nav-menu li a {
+          position: relative;
+          color: #fff;
+          text-decoration: none;
+          padding: 12px 16px;
+          font-weight: 600;
+          border-radius: 0; /* like academics links */
+          transition: color 0.2s ease;
+        }
+        nav ul.nav-menu li a::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          display: block;
+          margin-top: 5px;
+          right: 0;
+          background: var(--secondary-color);
+          transition: width 0.3s ease;
+        }
+        nav ul.nav-menu li a:hover::after,
+        nav ul.nav-menu li a.active::after {
+          width: 100%;
+          left: 0;
+        }
+        nav ul.nav-menu li a.active { color: var(--secondary-color); }
+        
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+header .logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: white;
+}
+
+header .logo-text h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+header .logo-text p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 119, 182, 0.7), rgba(0, 119, 182, 0.7)), url('https://via.placeholder.com/1500x600.png?text=ZP+School+Campus') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--heading-font);
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 15px auto 0;
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 1100px;
+        }
+
+        h2 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Vision & Mission Cards */
+        .vision-mission-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            flex: 1;
+            min-width: 300px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+            will-change: transform;
+        }
+        .card:hover {
+            background-color: #f7f9fc;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+            transform: translateY(-4px);
+        }
+        .card h3 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        .card ul {
+            padding-left: 20px;
+            list-style-type: '✔ ';
+        }
+        .card ul li {
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Principal’s Message */
+        .principal-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            flex-wrap: wrap;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+            will-change: transform;
+        }
+        .principal-container:hover {
+            background-color: #f7f9fc;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+            transform: translateY(-4px);
+        }
+        .principal-img {
+            flex-shrink: 0;
+        }
+        .principal-img img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
+        }
+        .principal-text p {
+            font-style: italic;
+            font-size: 1.5rem; /* was ~1.1rem */
+            margin: 0;
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+        .principal-text p::before {
+            content: '“';
+            font-size: 3rem;
+            color: var(--primary-color);
+            position: absolute;
+            left: -10px;
+            top: -10px;
+        }
+        .principal-text .principal-name {
+            font-weight: bold;
+            font-style: normal;
+            display: block;
+            margin-top: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Facilities Grid */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .facility-item {
+            background: #fff;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+            will-change: transform;
+        }
+        .facility-item:hover {
+            background-color: #f7f9fc;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+            transform: translateY(-4px);
+        }
+        .facility-item .icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        .facility-item h4 {
+            margin: 0;
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+        }
+        .contact p {
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--text-color);
+            color: #fff;
+            margin-top: 40px;
+        }
+
+        /* Language select in nav styled */
+        .lang-select {
+          appearance: none;
+          background: #023e8a;
+          color: #fff;
+          border: 1px solid rgba(255,255,255,0.25);
+          border-radius: 6px;
+          padding: 8px 12px;
+          font-family: "Times New Roman", Times, serif;
+          font-size: 0.95rem;
+          cursor: pointer;
+        }
+
+        nav ul.nav-menu li.lang-select-item {
+          position: static;
+          margin-left: 8px;
+        }
+
+        /* when Google Translate banner appears, avoid header overlap */
+        body.gt-banner-shown header { margin-top: 40px; }
+        @media (max-width: 600px) {
+          body.gt-banner-shown header { margin-top: 48px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header / Navigation -->
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.jpg" alt="School Logo">
+    </a>
+    <div class="logo-text">
+      <h1>Lal bahadur shastri vidyalaya</h1>
+      <p>Education for Everyone</p>
+    </div>
+  </div>
+</header>
+<nav>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li class="lang-select-item">
+        <select id="languageSwitcher" class="lang-select" aria-label="Select language">
+          <option value="en" selected>English</option>
+          <option value="mr">Marathi</option>
+          <option value="hi">Hindi</option>
+        </select>
+      </li>
+    </ul>
+</nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>About Lal bahadur shastri vidyalaya, Nila </h1>
+        <p>Empowering Rural India with Quality Education and Strong Values</p>
+    </div>
+
+    <!-- Vision & Mission -->
+    <section>
+        <h2>Our Foundation</h2>
+        <div class="vision-mission-container">
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>To be a beacon of learning that nurtures every child with holistic education, instilling strong moral values and a passion for lifelong learning.</p>
+            </div>
+            <div class="card">
+                <h3>Our Mission</h3>
+                <ul>
+                    <li>Provide accessible and quality education to all.</li>
+                    <li>Foster creativity through cultural and co-curricular activities.</li>
+                    <li>Promote digital literacy with modern teaching methods.</li>
+                    <li>Build a safe, encouraging, and inclusive environment.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal’s Message -->
+    <section>
+        <h2>A Word from Our Principal</h2>
+        <div class="principal-container">
+            <div class="principal-img">
+                <!-- Replace with the actual principal's photo -->
+                <img src="principal.jpg" alt="School Principal">
+            </div>
+            <div class="principal-text">
+                <p>
+                    Education is the most powerful weapon which you can use to change the world. At ZP School, we are committed to building a nurturing environment where every child is given the opportunity to shine and grow into a responsible, compassionate, and confident individual."
+                    <span class="principal-name">- Mr. Vilas Bhojane</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities & Activities -->
+    <section>
+        <h2>Facilities & Activities</h2>
+        <div class="facilities-grid">
+            <div class="facility-item" role="button" tabindex="0" data-modal="modal-classroom" aria-haspopup="dialog" aria-label="Spacious Classrooms - open details">
+                <div class="icon">🏫</div>
+                <h4>Spacious Classrooms</h4>
+            </div>
+            <div class="facility-item" role="button" tabindex="0" data-modal="modal-library" aria-haspopup="dialog" aria-label="Library & Reading Corner - open details">
+                <div class="icon">📚</div>
+                <h4>Library & Reading Corner</h4>
+            </div>
+            <div class="facility-item" role="button" tabindex="0" data-modal="modal-sports" aria-haspopup="dialog" aria-label="Sports & Physical Education - open details">
+                <div class="icon">⚽</div>
+                <h4>Sports & Physical Education</h4>
+            </div>
+            <div class="facility-item" role="button" tabindex="0" data-modal="modal-digital" aria-haspopup="dialog" aria-label="Smart Digital Classroom - open details">
+                <div class="icon">💻</div>
+                <h4>Smart Digital Classroom</h4>
+            </div>
+            <div class="facility-item" role="button" tabindex="0" data-modal="modal-cultural" aria-haspopup="dialog" aria-label="Annual Cultural Programs - open details">
+                <div class="icon">🎨</div>
+                <h4>Annual Cultural Programs</h4>
+            </div>
+            <div class="facility-item" role="button" tabindex="0" data-modal="modal-lab" aria-haspopup="dialog" aria-label="Science Lab - open details">
+                <div class="icon">🔬</div>
+                <h4>Science Lab</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals / Sub-pages for each facility -->
+    <div id="modals-container">
+      <div class="modal" id="modal-classroom" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Spacious Classrooms">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Close">&times;</button>
+          <h3>Spacious Classrooms</h3>
+    <!--add img-->      <img src="https://source.unsplash.com/1200x700/?classroom" alt="Spacious classroom photo">
+          <p>Well-ventilated, bright classrooms designed for active learning and student engagement.</p>
+        </div>
+      </div>
+
+      <div class="modal" id="modal-library" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Library & Reading Corner">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Close">&times;</button>
+          <h3>Library & Reading Corner</h3>
+          <!--add img-->   <img src="https://source.unsplash.com/1200x700/?library,books" alt="Library and reading corner">
+          <p>A cozy reading corner and a library stocked with age-appropriate books to spark curiosity.</p>
+        </div>
+      </div>
+
+      <div class="modal" id="modal-sports" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Sports & Physical Education">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Close">&times;</button>
+          <h3>Sports & Physical Education</h3>
+         <!--add img-->    <img src="https://source.unsplash.com/1200x700/?sports,children" alt="Students playing sports">
+          <p>Outdoor and indoor sports facilities encouraging fitness, teamwork and healthy competition.</p>
+        </div>
+      </div>
+
+      <div class="modal" id="modal-digital" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Smart Digital Classroom">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Close">&times;</button>
+          <h3>Smart Digital Classroom</h3>
+          <!--add img-->   <img src="https://source.unsplash.com/1200x700/?computer,classroom,digital" alt="Digital classroom with computers">
+          <p>Smart boards and computers to introduce students to digital literacy and multimedia learning.</p>
+        </div>
+      </div>
+
+      <div class="modal" id="modal-cultural" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Annual Cultural Programs">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Close">&times;</button>
+          <h3>Annual Cultural Programs</h3>
+          <!--add img-->   <img src="https://source.unsplash.com/1200x700/?cultural,students,performance" alt="Cultural program performance">
+          <p>Vibrant annual functions showcasing student talent in music, dance and drama.</p>
+        </div>
+      </div>
+
+      <div class="modal" id="modal-lab" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Science Lab">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content">
+          <button class="modal-close" aria-label="Close">&times;</button>
+          <h3>Science Lab</h3>
+          <!--add img-->   <img src="https://source.unsplash.com/1200x700/?science,lab,experiment" alt="Science lab equipment">
+          <p>Practical lab sessions with safe equipment to encourage hands-on scientific exploration.</p>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      /* Modal styles (scoped for this section) */
+      .modal { display: none; position: fixed; inset: 0; z-index: 2000; align-items: center; justify-content: center; }
+      .modal[aria-hidden="false"] { display: flex; }
+      .modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+      .modal-content {
+        position: relative;
+        background: #fff;
+        max-width: 900px;
+        width: calc(100% - 40px);
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        z-index: 2;
+        text-align: center;
+      }
+      .modal-content img { width: 100%; height: auto; border-radius: 6px; margin-top: 12px; }
+      .modal-close {
+        position: absolute;
+        right: 12px;
+        top: 8px;
+        background: transparent;
+        border: none;
+        font-size: 2rem;
+        line-height: 1;
+        color: #333;
+        cursor: pointer;
+      }
+      .facility-item { cursor: pointer; }
+      .facility-item:focus { outline: 3px solid rgba(0,123,255,0.25); outline-offset: 2px; }
+      @media (max-width: 600px) {
+        .modal-content { padding: 14px; }
+      }
+    </style>
+
+    <script>
+      (function(){
+        const openModal = (id) => {
+          const m = document.getElementById(id);
+          if (!m) return;
+          m.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          // focus first focusable inside modal for accessibility
+          const btn = m.querySelector('.modal-close');
+          if (btn) btn.focus();
+        };
+        const closeModal = (m) => {
+          if (!m) return;
+          m.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        };
+
+        // open when clicking facility items
+        document.querySelectorAll('.facility-item[data-modal]').forEach(item=>{
+          const modalId = item.dataset.modal;
+          const handler = (e) => { openModal(modalId); };
+          item.addEventListener('click', handler);
+          item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handler(); }
+          });
+        });
+
+        // close buttons and backdrop clicks
+        document.querySelectorAll('.modal').forEach(m=>{
+          m.addEventListener('click', (e)=>{
+            if (e.target.matches('[data-close]') || e.target.classList.contains('modal-close') ) {
+              closeModal(m);
+            }
+            // click on backdrop (outside content)
+            if (e.target.classList.contains('modal-backdrop')) closeModal(m);
+          });
+        });
+
+        // close on Esc
+        document.addEventListener('keydown', (e)=>{
+          if (e.key === 'Escape') {
+            document.querySelectorAll('.modal[aria-hidden="false"]').forEach(m => closeModal(m));
+          }
+        });
+
+        // ensure modals are hidden by default
+        document.querySelectorAll('.modal').forEach(m => m.setAttribute('aria-hidden', 'true'));
+      })();
+    </script>
+
+    <!-- Contact --></p>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <p>
+            📍 Location: Lal bahadur shastri vidyalaya, Nila. Nanded
+            <br>
+            📞 Phone: +91-7588526017
+            <br>
+            📧 Email: lbsv.nila45@gmail.com
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Lal bahadur shastri vidyalaya | All Rights Reserved</p>
+    </footer>
+
+  <!-- Google Translate element + script and sync with custom select -->
+  <div id="google_translate_element" style="display:none;"></div>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,mr',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+    (function(){
+      const switcher = document.getElementById('languageSwitcher');
+      function setLang(l){ const gt = document.querySelector('.goog-te-combo'); if (gt){ gt.value = l; gt.dispatchEvent(new Event('change')); } }
+      if (switcher) switcher.addEventListener('change', function(){ setLang(this.value); });
+      const interval = setInterval(()=>{ const gt=document.querySelector('.goog-te-combo'); if (gt) { setLang('en'); clearInterval(interval);} }, 500);
+    })();
+  </script>
+  <script>
+    (function(){
+      const toggle = ()=>{
+        const banner = document.querySelector('iframe.goog-te-banner-frame');
+        if (banner) document.body.classList.add('gt-banner-shown');
+        else document.body.classList.remove('gt-banner-shown');
+      };
+      const obs = new MutationObserver(toggle);
+      obs.observe(document.body, { childList: true, subtree: true });
+      toggle();
+    })();
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

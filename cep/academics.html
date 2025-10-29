@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academics (शैक्षणिक) — Zilla Parishad School (जिल्हा परिषद शाळा)</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+      --primary-color: #0078d7;
+      --secondary-color: #f4f4f4;
+      --text-color: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
+
+    /* Header with logo */
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.7rem;
+    }
+
+    /* Navbar */
+    nav {
+      background: #005fa3;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      background: #004a82;
+      border-radius: 5px;
+    }
+
+    /* Main content */
+    .content {
+      padding: 40px 10%;
+      text-align: center;
+    }
+
+    .content h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Curriculum Section */
+    .download-section {
+      margin-top: 50px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      text-align: center;
+    }
+
+    .download-section h3 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #005fa3;
+    }
+
+    /* Popup Viewer Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .overlay iframe {
+      width: 80%;
+      height: 80%;
+      border: none;
+      background: white;
+      border-radius: 10px;
+      transform: scale(1);
+      transition: transform 0.3s ease;
+    }
+
+    .zoom-controls {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .zoom-controls button {
+      background: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+
+    .zoom-controls button:hover {
+      background: #ddd;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: red;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="logo.jpg" alt="School Logo" />
+    <h1>लाल बहादूर शास्त्री विद्यालय, निळा</h1>
+  </header>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="academics.html" class="active">Academics</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+  <!-- Main Section -->
+  <section class="content">
+    <h2>Our Academic Divisions (शैक्षणिक विभाग)</h2>
+
+    <div class="cards">
+       <!-- Card Section -->
+<!-- Main Card -->
+<div class="card">
+  <h3>Upper Primary (इयत्ता 5 ते 7)</h3>
+  <p>We enhance learning through interactive lessons and emphasize project-based understanding in all major subjects.</p>
+
+  <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+    <button onclick="openSubPage(event, 'subpage-class5')" 
+            style="background:#0077b6; color:#fff; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">
+      इयत्ता 5 वी अभ्यासक्रम
+    </button>
+
+    <button onclick="openSubPage(event, 'subpage-class6')" 
+            style="background:#0077b6; color:#fff; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">
+      इयत्ता 6 वी अभ्यासक्रम
+    </button>
+
+    <button onclick="openSubPage(event, 'subpage-class7')" 
+            style="background:#0077b6; color:#fff; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">
+      इयत्ता 7 वी अभ्यासक्रम
+    </button>
+  </div>
+</div>
+
+<!-- ---------- Subpage for Class 5 ---------- -->
+<div id="subpage-class5" role="dialog" aria-hidden="true"
+     style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:2000; padding:36px; box-sizing:border-box;">
+  <div style="max-width:900px; margin:40px auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.4);">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:#0077b6; color:#fff;">
+      <h3 style="margin:0; font-family:'Baloo 2', cursive;">इयत्ता 5 वी अभ्यासक्रम</h3>
+      <button onclick="closeSubPage('subpage-class5')" style="background:transparent; border:0; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding:22px; color:#333; font-family:Georgia, 'Times New Roman', Times, serif;">
+      <ul style="margin-left:20px; line-height:1.6;">
+        <li>मराठी – वाचन, लेखन, व्याकरण, निबंध लेखन, कविता.</li>
+        <li>English – Reading comprehension, Grammar, Vocabulary, Writing skills.</li>
+        <li>गणित – संख्याज्ञान, भिन्न, मापन, भूमितीची ओळख.</li>
+        <li>पर्यावरण अध्ययन (EVS) – समाज, निसर्ग, पर्यावरण व मानवी जीवनातील संबंध.</li>
+        <li>चित्रकला, हस्तकला आणि संगणक शिक्षण.</li>
+      </ul>
+
+      <p style="margin-top:16px;">
+        हा अभ्यासक्रम विद्यार्थ्यांना मूलभूत ज्ञान देतो आणि पुढील वर्गांसाठी पायाभूत समज तयार करतो.
+      </p>
+
+      <p style="text-align:right; margin-top:18px;">
+        <button onclick="closeSubPage('subpage-class5')" 
+                style="background:#ffdd00; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">बंद करा</button>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- Subpage for Class 6 ---------- -->
+<div id="subpage-class6" role="dialog" aria-hidden="true"
+     style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:2000; padding:36px; box-sizing:border-box;">
+  <div style="max-width:900px; margin:40px auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.4);">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:#0077b6; color:#fff;">
+      <h3 style="margin:0; font-family:'Baloo 2', cursive;">इयत्ता 6 वी अभ्यासक्रम</h3>
+      <button onclick="closeSubPage('subpage-class6')" style="background:transparent; border:0; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding:22px; color:#333; font-family:Georgia, 'Times New Roman', Times, serif;">
+      <ul style="margin-left:20px; line-height:1.6;">
+        <li>मराठी आणि इंग्रजी भाषा – वाचन समज, लेखन कौशल्य, व्याकरण व संभाषण.</li>
+        <li>गणित – भिन्न, दशांश, प्रमाण, मोजमाप, आकृती.</li>
+        <li>विज्ञान – नैसर्गिक घटक, सजीव व निर्जीव वस्तू, भौतिक विज्ञानाची सुरुवात.</li>
+        <li>इतिहास – महाराष्ट्राचा आणि भारताचा प्रारंभिक इतिहास.</li>
+        <li>भूगोल – पृथ्वी, नकाशे, हवामान, खंड व महासागर.</li>
+        <li>कला, संगणक शिक्षण आणि आरोग्य शिक्षण.</li>
+      </ul>
+
+      <p style="margin-top:16px;">
+        हा अभ्यासक्रम विद्यार्थ्यांमध्ये वैज्ञानिक दृष्टीकोन आणि समाजाशी निगडित ज्ञान विकसित करतो.
+      </p>
+
+      <p style="text-align:right; margin-top:18px;">
+        <button onclick="closeSubPage('subpage-class6')" 
+                style="background:#ffdd00; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">बंद करा</button>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- Subpage for Class 7 ---------- -->
+<div id="subpage-class7" role="dialog" aria-hidden="true"
+     style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:2000; padding:36px; box-sizing:border-box;">
+  <div style="max-width:900px; margin:40px auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.4);">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:#0077b6; color:#fff;">
+      <h3 style="margin:0; font-family:'Baloo 2', cursive;">इयत्ता 7 वी अभ्यासक्रम</h3>
+      <button onclick="closeSubPage('subpage-class7')" style="background:transparent; border:0; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding:22px; color:#333; font-family:Georgia, 'Times New Roman', Times, serif;">
+      <ul style="margin-left:20px; line-height:1.6;">
+        <li>मराठी आणि इंग्रजी – सृजनशील लेखन, संवाद कौशल्य, व्याकरण व कविता.</li>
+        <li>गणित – बीजगणिताची ओळख, क्षेत्रफळ, प्रमाण, टक्केवारी, कोन.</li>
+        <li>विज्ञान – बल, उष्णता, द्रव पदार्थ, पर्यावरणीय संतुलन, रासायनिक बदल.</li>
+        <li>इतिहास – मध्ययुगीन भारत, सामाजिक बदल आणि स्वराज्य संकल्पना.</li>
+        <li>भूगोल – पृथ्वीची रचना, हवामान, जलस्रोत आणि पर्यावरण.</li>
+        <li>संगणक शिक्षण, योग, निबंध आणि व्यक्तिमत्व विकास.</li>
+      </ul>
+
+      <p style="margin-top:16px;">
+        हा अभ्यासक्रम विद्यार्थ्यांना माध्यमिक शिक्षणासाठी तयार करतो आणि त्यांच्या आत्मविश्वासात वृद्धी करतो.
+      </p>
+
+      <p style="text-align:right; margin-top:18px;">
+        <button onclick="closeSubPage('subpage-class7')" 
+                style="background:#ffdd00; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">बंद करा</button>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- JS for Open/Close ---------- -->
+<script>
+  function openSubPage(event, id) {
+    event.preventDefault();
+    document.getElementById(id).style.display = 'block';
+  }
+  function closeSubPage(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+
+<!-- JS for open/close popup -->
+<script>
+  function openSubPage(event, id) {
+    event.preventDefault();
+    document.getElementById(id).style.display = 'block';
+  }
+  function closeSubPage(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+
+
+     <!-- Main Card for Secondary -->
+<div class="card">
+  <h3>Secondary (इयत्ता 8 ते 10)</h3>
+  <p>We prepare students for board exams with strong fundamentals in science, mathematics, and language subjects.</p>
+
+  <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+    <button onclick="openSubPage(event, 'subpage-class8')" 
+            style="background:#0077b6; color:#fff; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">
+      इयत्ता 8 वी अभ्यासक्रम
+    </button>
+
+    <button onclick="openSubPage(event, 'subpage-class9')" 
+            style="background:#0077b6; color:#fff; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">
+      इयत्ता 9 वी अभ्यासक्रम
+    </button>
+
+    <button onclick="openSubPage(event, 'subpage-class10')" 
+            style="background:#0077b6; color:#fff; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">
+      इयत्ता 10 वी अभ्यासक्रम
+    </button>
+  </div>
+</div>
+
+<!-- ---------- Subpage for Class 8 ---------- -->
+<div id="subpage-class8" role="dialog" aria-hidden="true"
+     style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:2000; padding:36px; box-sizing:border-box;">
+  <div style="max-width:900px; margin:40px auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.4);">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:#0077b6; color:#fff;">
+      <h3 style="margin:0; font-family:'Baloo 2', cursive;">इयत्ता 8 वी अभ्यासक्रम</h3>
+      <button onclick="closeSubPage('subpage-class8')" style="background:transparent; border:0; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding:22px; color:#333; font-family:Georgia, 'Times New Roman', Times, serif;">
+      <ul style="margin-left:20px; line-height:1.6;">
+        <li>मराठी आणि इंग्रजी – वाचन समज, निबंध लेखन, व्याकरण, शब्दसंपदा.</li>
+        <li>गणित – बीजगणित, भूमिती, प्रमाण, क्षेत्रफळ, सरासरी.</li>
+        <li>विज्ञान – रासायनिक प्रतिक्रिया, पेशी, जीवसृष्टी, ऊर्जा स्रोत.</li>
+        <li>इतिहास – भारतीय स्वातंत्र्यलढा व सामाजिक सुधारक.</li>
+        <li>भूगोल – भारताचा नकाशा, नैसर्गिक साधनसंपत्ती, लोकसंख्या.</li>
+        <li>नागरीशास्त्र – राज्यघटना, लोकशाही मूल्ये.</li>
+        <li>कला, संगणक आणि आरोग्य शिक्षण.</li>
+      </ul>
+
+      <p style="margin-top:16px;">
+        हा अभ्यासक्रम विद्यार्थ्यांना माध्यमिक स्तरासाठी आवश्यक मूलभूत समज देतो आणि विश्लेषणात्मक विचार वाढवतो.
+      </p>
+
+      <p style="text-align:right; margin-top:18px;">
+        <button onclick="closeSubPage('subpage-class8')" 
+                style="background:#ffdd00; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">बंद करा</button>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- Subpage for Class 9 ---------- -->
+<div id="subpage-class9" role="dialog" aria-hidden="true"
+     style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:2000; padding:36px; box-sizing:border-box;">
+  <div style="max-width:900px; margin:40px auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.4);">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:#0077b6; color:#fff;">
+      <h3 style="margin:0; font-family:'Baloo 2', cursive;">इयत्ता 9 वी अभ्यासक्रम</h3>
+      <button onclick="closeSubPage('subpage-class9')" style="background:transparent; border:0; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding:22px; color:#333; font-family:Georgia, 'Times New Roman', Times, serif;">
+      <ul style="margin-left:20px; line-height:1.6;">
+        <li>मराठी, हिंदी आणि इंग्रजी – भाषा कौशल्य, लेखन, वाचन व व्याकरण.</li>
+        <li>गणित – बीजगणित, सांख्यिकी, भूमिती, त्रिकोणमितीची ओळख.</li>
+        <li>विज्ञान आणि तंत्रज्ञान – रासायनिक बंध, गती, बल, दाब, वनस्पती व प्राणीशास्त्र.</li>
+        <li>इतिहास – आधुनिक भारत, स्वातंत्र्य आंदोलन, जागतिक इतिहास.</li>
+        <li>भूगोल – पृथ्वी, संसाधने, हवामान आणि पर्यावरणीय संतुलन.</li>
+        <li>नागरीशास्त्र – लोकशाही संस्था, नागरिकांचे अधिकार व कर्तव्ये.</li>
+        <li>कला, संगणक आणि शारीरिक शिक्षण.</li>
+      </ul>
+
+      <p style="margin-top:16px;">
+        हा अभ्यासक्रम विद्यार्थ्यांना दहावीच्या अभ्यासक्रमाची पूर्वतयारी करून घेतो आणि विश्लेषण, प्रयोगशीलता व आत्मविश्वास विकसित करतो.
+      </p>
+
+      <p style="text-align:right; margin-top:18px;">
+        <button onclick="closeSubPage('subpage-class9')" 
+                style="background:#ffdd00; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">बंद करा</button>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- Subpage for Class 10 ---------- -->
+<div id="subpage-class10" role="dialog" aria-hidden="true"
+     style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:2000; padding:36px; box-sizing:border-box;">
+  <div style="max-width:900px; margin:40px auto; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.4);">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:#0077b6; color:#fff;">
+      <h3 style="margin:0; font-family:'Baloo 2', cursive;">इयत्ता 10 वी अभ्यासक्रम</h3>
+      <button onclick="closeSubPage('subpage-class10')" style="background:transparent; border:0; color:#fff; font-size:20px; cursor:pointer;">✕</button>
+    </div>
+
+    <div style="padding:22px; color:#333; font-family:Georgia, 'Times New Roman', Times, serif;">
+      <ul style="margin-left:20px; line-height:1.6;">
+        <li>मराठी, हिंदी आणि इंग्रजी – निबंध, व्याकरण, कविता, पत्रलेखन आणि साहित्य अभ्यास.</li>
+        <li>गणित भाग 1 – बीजगणित, सांख्यिकी, रेखीय समीकरणे, अनुक्रम.</li>
+        <li>गणित भाग 2 – भूमिती, त्रिकोणमिती, क्षेत्रफळ, समांतर रेषा, वर्तुळे.</li>
+        <li>विज्ञान भाग 1 – भौतिकशास्त्र आणि रसायनशास्त्र.</li>
+        <li>विज्ञान भाग 2 – जीवशास्त्र आणि पर्यावरण विज्ञान.</li>
+        <li>इतिहास व राज्यशास्त्र – भारतीय स्वातंत्र्यलढा, संविधान, नागरिकशास्त्र.</li>
+        <li>भूगोल – भारताचा भूगोल, नकाशे, संसाधने, लोकसंख्या.</li>
+      </ul>
+
+      <p style="margin-top:16px;">
+        हा अभ्यासक्रम महाराष्ट्र राज्य माध्यमिक शाळा परीक्षेच्या (SSC Board) तयारीसाठी तयार केलेला आहे आणि विद्यार्थ्यांच्या सर्वांगीण विकासाला चालना देतो.
+      </p>
+
+      <p style="text-align:right; margin-top:18px;">
+        <button onclick="closeSubPage('subpage-class10')" 
+                style="background:#ffdd00; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;">बंद करा</button>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- JS for Open/Close Popups ---------- -->
+<script>
+  function openSubPage(event, id) {
+    event.preventDefault();
+    document.getElementById(id).style.display = 'block';
+  }
+  function closeSubPage(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+</div>
+
+
+    <!-- Know More Button -->
+    <div style="margin-top: 40px;">
+      <a href="https://books.ebalbharati.in/" class="btn" onclick="openEvents()">Download book</a>
+    </div>
+  </section>
+
+  <!-- Overlay for PDF -->
+  <div class="overlay" id="overlay">
+    <button class="close-btn" onclick="closeOverlay()">X</button>
+    <div class="zoom-controls">
+      <button onclick="zoomIn()">＋</button>
+      <button onclick="zoomOut()">－</button>
+    </div>
+    <iframe id="pdfViewer" src="downloads/curriculum.pdf"></iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Lal bahadur shastri vidyalaya | All Rights Reserved
+  </footer>
+
+
+  <div class="overlay" id="eventsOverlay">
+  <button class="close-btn" onclick="closeEvents()">X</button>
+  <iframe id="eventsFrame" src="academics-events.html"></iframe>
+</div>
+
+
+  <!-- JS for PDF Popup -->
+  <script>
+    let scale = 1;
+    function openOverlay() {
+      document.getElementById('overlay').style.display = 'flex';
+    }
+    function closeOverlay() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+    function zoomIn() {
+      scale += 0.1;
+      document.getElementById('pdfViewer').style.transform = 'scale(' + scale + ')';
+    }
+    function zoomOut() {
+      if (scale > 0.5) {
+        scale -= 0.1;
+        document.getElementById('pdfViewer').style.transform = 'scale(' + scale + ')';
+      }
+    }
+
+    
+    function openEvents() {
+    document.getElementById('eventsOverlay').style.display = 'flex';
+  }
+  function closeEvents() {
+    document.getElementById('eventsOverlay').style.display = 'none';
+  }
+  </script>
+</body>
+</html>
